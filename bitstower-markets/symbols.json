@@ -1,0 +1,70 @@
+{
+  "version" : 1,
+  "symbols" : [
+    {
+      "symbol" : "TDUP",
+      "quoteType" : "EQUITY",
+      "shortName" : "ThredUp Inc.",
+      "exchange" : "NMS",
+      "marketState" : "POSTPOST",
+      "currency" : "USD",
+      "priceHint" : 4,
+      "regularMarketTime" : 1671570004,
+      "regularMarketPrice" : 1.5600000000000001,
+      "regularMarketChange" : -0.13000011,
+      "regularMarketChangePercent" : -7.6923139999999997
+    },
+    {
+      "symbol" : "TSLA",
+      "quoteType" : "EQUITY",
+      "shortName" : "Tesla, Inc.",
+      "exchange" : "NMS",
+      "marketState" : "POSTPOST",
+      "currency" : "USD",
+      "priceHint" : 2,
+      "regularMarketTime" : 1671570004,
+      "regularMarketPrice" : 137.80000000000001,
+      "regularMarketChange" : -12.069991999999999,
+      "regularMarketChangePercent" : -8.0536410000000007
+    },
+    {
+      "symbol" : "AAPL",
+      "quoteType" : "EQUITY",
+      "shortName" : "Apple Inc.",
+      "exchange" : "NMS",
+      "marketState" : "POSTPOST",
+      "currency" : "USD",
+      "priceHint" : 2,
+      "regularMarketTime" : 1671570004,
+      "regularMarketPrice" : 132.30000000000001,
+      "regularMarketChange" : -0.069992065000000006,
+      "regularMarketChangePercent" : -0.052876078
+    },
+    {
+      "symbol" : "BTC-USD",
+      "quoteType" : "CRYPTOCURRENCY",
+      "shortName" : "Bitcoin USD",
+      "exchange" : "CCC",
+      "marketState" : "REGULAR",
+      "currency" : "USD",
+      "priceHint" : 2,
+      "regularMarketTime" : 1671590940,
+      "regularMarketPrice" : 16873.018,
+      "regularMarketChange" : 113.853516,
+      "regularMarketChangePercent" : 0.67935467000000005
+    },
+    {
+      "symbol" : "EURUSD=X",
+      "quoteType" : "CURRENCY",
+      "shortName" : "EUR/USD",
+      "exchange" : "CCY",
+      "marketState" : "REGULAR",
+      "currency" : "USD",
+      "priceHint" : 4,
+      "regularMarketTime" : 1671591045,
+      "regularMarketPrice" : 1.0619092999999999,
+      "regularMarketChange" : -0.00067698955999999995,
+      "regularMarketChangePercent" : -0.063712480000000002
+    }
+  ]
+}
