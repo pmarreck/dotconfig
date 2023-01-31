@@ -58,6 +58,7 @@ style = ""
 format = '[$symbol ($version) ]($style)'
 
 [docker_context]
+disabled = true
 symbol = " "
 style = ""
 format = '[$symbol $context ]($style) $path'
@@ -122,9 +123,10 @@ style = ""
 format = '[$symbol ($version) ]($style)'
 
 [status]
-style = "fg:yellow"
-# success_symbol = '✓'
-format = '[$symbol$common_meaning$signal_name$maybe_int ]($style) '
+style = 'blink fg:yellow'
+# symbol = '🔴'
+success_symbol = '🟢'
+format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
 map_symbol = true
 disabled = false
 
