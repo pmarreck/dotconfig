@@ -28,16 +28,20 @@ command_timeout = 5000
 
 # You can also replace your username with a neat symbol like  to save some space
 [username]
-show_always = true
-style_user = ""
-style_root = ""
+show_always = false
+# style_user = ""
+# style_root = ""
 format = '[$user ]($style)'
 
 [directory]
 style = ""
 format = "[$path ]($style)"
+before_repo_root_style = "dimmed"
+repo_root_style = "bold"
+truncate_to_repo = false
 truncation_length = 3
 truncation_symbol = "…/"
+
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
@@ -139,5 +143,5 @@ disabled = false
 [time]
 disabled = false
 time_format = "%Y%m%d%H%M%S" # YYMMDDHHMMSS Format
-style = "fg:#aaaaaa"
+style = "dimmed"
 format = '[$time ]($style)'
