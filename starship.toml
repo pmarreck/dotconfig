@@ -5,6 +5,7 @@ $git_branch\
 $git_status\
 $c\
 $elixir\
+$erlang\
 $elm\
 $golang\
 $haskell\
@@ -68,9 +69,18 @@ style = ""
 format = '[$symbol $context ]($style) $path'
 
 [elixir]
-symbol = " "
-style = ""
+symbol = ""
+style = 'fg:#9400D3'
+version_format = '${raw}'
 format = '[$symbol ($version) ]($style)'
+
+[erlang]
+format = '[$symbol](bg:#800000 fg:white)[$version ]($style)'
+version_format = '${raw}'
+symbol = 'e'
+style = 'dimmed'
+detect_files =[ "rebar.config", "erlang.mk", "mix.exs" ]
+
 
 [elm]
 symbol = " "
@@ -127,6 +137,7 @@ style = ""
 format = '[$symbol ($version) ]($style)'
 
 [status]
+# when = """ [[ "$!" =~ 'test' ]] """
 style = 'blink fg:yellow'
 # symbol = '🔴'
 success_symbol = '🟢'
