@@ -1,7 +1,8 @@
 format = """
-$time\
-$directory\
+$username\
 $git_branch\
+$git_commit\
+$git_metrics\
 $git_status\
 $c\
 $elixir\
@@ -13,8 +14,12 @@ $nodejs\
 $rust\
 $docker_context\
 $status\
+$cmd_duration\
+$line_break\
+$time\
+$directory\
 $sudo\
-$username\
+$shell\
 [> ](fg:#FFAC1C)\
 """
 
@@ -29,8 +34,8 @@ command_timeout = 5000
 
 # You can also replace your username with a neat symbol like  to save some space
 [username]
-show_always = false
-# style_user = ""
+show_always = true
+style_user = "bold #FFAC1C"
 # style_root = ""
 format = '[$user ]($style)'
 
@@ -62,6 +67,15 @@ symbol = " "
 style = ""
 format = '[$symbol ($version) ]($style)'
 
+[cmd_duration]
+disabled = false
+format = "[$duration]($style) "
+style = "yellow"
+min_time = 100
+min_time_to_notify = 30_000
+show_milliseconds = true
+show_notifications = true
+
 [docker_context]
 disabled = true
 symbol = " "
@@ -91,6 +105,21 @@ format = '[$symbol ($version) ]($style)'
 symbol = ""
 style = ""
 format = '[$symbol $branch ]($style)'
+
+[git_commit]
+format = "[@ $hash]($style)[ (\\($tag\\))]($style)"
+commit_hash_length = 8
+only_detached = false
+style = "white"
+tag_disabled = false
+tag_symbol = " 🏷 "
+
+[git_metrics]
+disabled = false
+format = '\([+$added]($added_style)/[-$deleted]($deleted_style)\) '
+added_style = "bold green"
+deleted_style = "bold red"
+only_nonzero_diffs = true
 
 [git_status]
 style = ""
@@ -136,11 +165,28 @@ symbol = " "
 style = ""
 format = '[$symbol ($version) ]($style)'
 
+[shell]
+disabled = false
+format = '[$indicator]($style)'
+style = 'white'
+bash_indicator = 'bash'
+fish_indicator = 'fish'
+zsh_indicator = 'zsh'
+powershell_indicator = 'pwrsh'
+ion_indicator = 'ion'
+elvish_indicator = 'esh'
+tcsh_indicator = 'tcsh'
+xonsh_indicator = 'xonsh'
+cmd_indicator = 'cmd'
+nu_indicator = 'nu'
+unknown_indicator = ''
+
 [status]
 # when = """ [[ "$!" =~ 'test' ]] """
 style = 'blink fg:yellow'
 # symbol = '🔴'
 success_symbol = '🟢'
+sigint_symbol = '🛑'
 format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
 map_symbol = true
 disabled = false
@@ -156,3 +202,268 @@ disabled = false
 time_format = "%Y%m%d%H%M%S" # YYMMDDHHMMSS Format
 style = "dimmed"
 format = '[$time ]($style)'
+
+# add_newline = true
+
+# format = """
+# ${custom.git_repository}\
+# $directory\
+# $fill \
+# $vcsh\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
+# $hg_branch\
+# $shlvl\
+# $kubernetes\
+# $docker_context\
+# $package\
+# $cmake\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $golang\
+# $helm\
+# $java\
+# $julia\
+# $kotlin\
+# $nim\
+# $nodejs\
+# $ocaml\
+# $perl\
+# $php\
+# $purescript\
+# $python\
+# $red\
+# $ruby\
+# $rust\
+# $scala\
+# $swift\
+# $terraform\
+# $vlang\
+# $vagrant\
+# $zig\
+# $nix_shell\
+# $conda\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $env_var\
+# $crystal\
+# $custom\
+# $cmd_duration\
+# $line_break\
+# $username\
+# $hostname\
+# $lua\
+# $jobs\
+# $battery\
+# $time\
+# $status\
+# $shell\
+# $character"""
+
+# [custom.git_repository]
+# command = "tput el1; tput hpa 0; basename $(git rev-parse --show-toplevel) |tr -d \\040"
+# directories = []
+# extensions = []
+# files = []
+# format = "[$symbol($output)]($style)[:](red)"
+# style = "bold cyan"
+# symbol = ""
+# #when = "true"
+# when = """ test "$(git rev-parse --git-dir)" != '' """
+
+# [aws]
+# disabled = false
+# expiration_symbol = "x"
+# format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+# #region_aliases = ""
+# style = "bold yellow"
+# symbol = "☁️ "
+
+# [aws.region_aliases]
+# eu-central-1 = "frn"
+# eu-west-1 = "prs"
+# eu-west-2 = "ldn"
+
+# [character]
+# disabled = false
+# format = "$symbol "
+# error_symbol = "[x](bold red)"
+# success_symbol = "[\\$](bold green)"
+# vicmd_symbol = "[V](bold green)"
+
+# [cmd_duration]
+# disabled = true
+# format = "took [$duration]($style) "
+# style = "bold yellow"
+# min_time = 10_000
+# min_time_to_notify = 60_000
+# show_milliseconds = false
+# show_notifications = true
+
+# [directory]
+# format = "[$path]($style)[$read_only]($read_only_style) "
+# style = "bold cyan"
+# home_symbol = "~"
+# read_only = "🔒"
+# read_only_style = "red"
+# truncate_to_repo = true
+# truncation_length = 4
+# truncation_symbol = "…/"
+
+# [fill]
+# symbol = " "
+# style = "bold black"
+
+# [git_branch]
+# #format = "on [$symbol$branch]($style) "
+# format = "[$symbol$branch]($style) "
+# style = "bold purple"
+# symbol = " "
+
+# [git_commit]
+# format = "[\\($hash\\)]($style)[ (\\($tag\\))]($style)"
+# commit_hash_length = 8
+# only_detached = false
+# style = "bold green"
+# tag_disabled = false
+# tag_symbol = " 🏷 "
+
+# [git_metrics]
+# disabled = false
+# format = '\([+$added]($added_style)/[-$deleted]($deleted_style)\) '
+# added_style = "bold green"
+# deleted_style = "bold red"
+
+# [git_status]
+# format = '([\[$all_status$ahead_behind\]]($style) )'
+# style = "bold red"
+# conflicted = "≠"
+# ahead = "⇡"
+# behind = "⇣"
+# diverged = "⇕"
+# untracked = "?"
+# stashed = "\\$"
+# modified = "!"
+# staged = "+"
+# renamed = "»"
+# deleted = "✘"
+
+# [git_state]
+# #format = '\([$state( $progress_current/$progress_total)]($style)\) '
+# style = "bold yellow"
+# am = "AM"
+# am_or_rebase = "AM/RB"
+# bisect = "BS"
+# cherry_pick = "CP"
+# merge = "MG"
+# rebase = "RB"
+# revert = "RV"
+
+# [hostname]
+# format = "[$hostname]($style) "
+# style = "bold green"
+# ssh_only = false
+
+# [kubernetes]
+# format = '[$symbol$context( \($namespace\))]($style) in '
+# style = "cyan bold"
+# # context_aliases ?
+# symbol = "☸ "
+
+# [line_break]
+# #disabled = true
+
+# [memory_usage]
+# disabled = true
+# #format = "via $symbol [${ram}( \| ${swap})]($style) " # invalid escape character in string: `|`
+# style = "bold dimmed white"
+# symbol = "🐏"
+# threshold = 75
+
+# [package]
+# disabled = true
+# format = "is [$symbol$version]($style) "
+# style = "bold 208"
+# display_private = false
+# symbol = "📦 "
+
+# [python]
+# disabled = true
+# format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+# style = "yellow bold"
+# detect_extensions = ["py"]
+# detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+# detect_folders = []
+# pyenv_prefix = "pyenv"
+# pyenv_version_name = false
+# python_binary = ["python", "python3", "python2"]
+# symbol = "🐍 "
+# version_format = "v${raw}"
+
+# [shell]
+# disabled = true
+
+# [shlvl]
+# disabled = true
+# format = "[$symbol$shlvl]($style) "
+# style = "bold yellow"
+# repeat = false
+# symbol = "↕️ "
+# threshold = 2
+
+# [status]
+# disabled = true
+# format = "[$symbol$status]($style) "
+# style = "bold red"
+# map_symbol = true
+# not_executable_symbol = "🚫"
+# not_found_symbol = "🔍"
+# pipestatus = true
+# pipestatus_format = "\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$maybe_int]($style)"
+# recognize_signal_code = true
+# sigint_symbol = "🧱"
+# signal_symbol = "⚡"
+# #success_symbol = "✔️"
+# success_symbol = "v"
+# #symbol = "✖"
+# symbol = "x"
+
+# [terraform]
+# disabled = true
+# format = "via [$symbol$workspace]($style) "
+# style = "bold 105"
+# detect_extensions = ["tf", "hcl"]
+# detect_files = []
+# detect_folders = [".terraform"]
+# symbol = "💠"
+# version_format = "v${raw}"
+
+# [time]
+# disabled = true
+# format = "at [$time]($style) "
+# style = "bold yellow"
+# #time_format = "%T"
+# time_range = "-"
+# use_12hr = false
+# utc_time_offset = "local"
+
+# [username]
+# format = "[$user]($style)[@](red)"
+# show_always = true
+# style_root = "bold red"
+# style_user = "bold yellow"
+
+# [vcsh]
+# disabled = false
+# format = "[$symbol$repo]($style) "
+# style = "bold yellow"
+# symbol = "🆅"
