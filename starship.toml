@@ -3,6 +3,7 @@ $username\
 $git_branch\
 $git_commit\
 $git_metrics\
+${custom.git_metrics}\
 $git_status\
 $c\
 $elixir\
@@ -71,7 +72,7 @@ format = '[$symbol ($version) ]($style)'
 disabled = false
 format = "[$duration]($style) "
 style = "yellow"
-min_time = 100
+min_time = 0 # Good to know how long prompt generation takes!
 min_time_to_notify = 30_000
 show_milliseconds = true
 show_notifications = true
@@ -115,11 +116,20 @@ tag_disabled = false
 tag_symbol = " 🏷 "
 
 [git_metrics]
-disabled = false
+disabled = true
 format = '\([+$added]($added_style)/[-$deleted]($deleted_style)\) '
 added_style = "bold green"
 deleted_style = "bold red"
 only_nonzero_diffs = true
+
+[custom.git_metrics]
+disabled = false
+# command = "git diff --numstat | awk '{ add += $1; subs += $2; loc += $1; loc += $2; fileschanged += 1 } END { printf \"[%s](+%s/-%s)\", fileschanged, add, subs }'"
+# read the following output aloud as (for ex.) "22 lines changed across 2 files consisting of 13 additions and 9 deletions"
+# (22|2:+13/-9)
+command = "git --no-optional-locks diff --shortstat | awk '{split($0,a,\" \");printf \"(%s|%s:\\033[32m+%s\\033[0m/\\033[31m-%s\\033[0m)\",(a[4]+a[6]),a[1],a[4],a[6]}'"
+when = "git rev-parse --is-inside-work-tree"
+format = "$output"
 
 [git_status]
 style = ""
