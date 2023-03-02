@@ -35,3 +35,8 @@ dconf
 XaoS*
 micro
 nix-data
+dconf/user
+asciinema/
+configstore/
+spotify-tui/
+spotifyd/
