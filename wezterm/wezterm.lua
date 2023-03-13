@@ -1,23 +1,43 @@
 local wezterm = require 'wezterm';
+local act = wezterm.action;
+
 -- see color schemes with examples at https://wezfurlong.org/wezterm/colorschemes/index.html
-local scheme = wezterm.get_builtin_color_schemes()["Cobalt2"]
+local cobalt2 = wezterm.color.get_builtin_schemes()["Cobalt2"];
+local embark, _metadata = wezterm.color.load_scheme(wezterm.config_dir .. "/colors/embark.toml");
+local current_theme = embark;
 -- overrides
-scheme.scrollbar_thumb = "#aaa"
+current_theme.scrollbar_thumb = "#aaa";
+-- overrode the theme text selection colors because they were not distinct enough:
+current_theme.selection_fg = 'black';
+current_theme.selection_bg = '#fffacd';
+-- current_theme.selection_bg = '#ff9950';
+
+-- now with darkmode support!
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Cobalt Peter'
+  else
+    return 'Current'
+  end
+end
 
 return {
   check_for_updates = false,
   font = wezterm.font("Berkeley Mono"),
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
   color_schemes = {
-    ["Cobalt Peter"] = scheme,
+    ["Cobalt Peter"] = cobalt2,
+    ["Embark"] = embark,
+    ["Current"] = current_theme,
   },
-  color_scheme = "Cobalt Peter",
+  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+  -- color_scheme = "Current", --"Cobalt Peter",
   font_size = 12.0,
   window_background_opacity = 0.85,
   use_fancy_tab_bar = true,
   hide_tab_bar_if_only_one_tab = true,
   enable_scroll_bar = true,
-  scrollback_lines = 1000000,
+  scrollback_lines = 10000000,
   -- https://wezfurlong.org/wezterm/config/lua/config/window_frame.html
   window_frame = {
     inactive_titlebar_bg = "#353535",
@@ -48,20 +68,46 @@ return {
       action = wezterm.action_callback(function(window, pane)
         local sel = window:get_selection_text_for_pane(pane)
         if (not sel or sel == '') then
-          window:perform_action(wezterm.action.SendKey{ key='c', mods='CTRL' }, pane)
+          window:perform_action(act.SendKey{ key='c', mods='CTRL' }, pane)
         else
-          window:perform_action(wezterm.action{ CopyTo = 'ClipboardAndPrimarySelection' }, pane)
+          window:perform_action(act{ CopyTo = 'ClipboardAndPrimarySelection' }, pane)
         end
       end),
     },
-    { key = 'v', mods = 'CTRL', action = wezterm.action.Paste },
+    { key = 'v', mods = 'CTRL', action = act.Paste },
     { key = 'v', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
-      window:perform_action(wezterm.action.SendKey{ key='v', mods='CTRL' }, pane) end),
+      window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
     },
     { key = 'V', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
-      window:perform_action(wezterm.action.SendKey{ key='v', mods='CTRL' }, pane) end),
+      window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
     },
-    { key = 'c', mods = 'ALT', action = wezterm.action.Copy },
-    { key = 'v', mods = 'ALT', action = wezterm.action.Paste },
+    { key = 'c', mods = 'ALT', action = act.Copy },
+    { key = 'v', mods = 'ALT', action = act.Paste },
+    -- search for things that look like git hashes
+    {
+      key = 'h',
+      mods = 'SHIFT|CTRL',
+      action = act.Search { Regex = '[a-fA-F0-9]{6,}' },
+    },
   },
+  key_tables = {
+    search_mode = {
+      -- { key = 'Enter', mods = 'NONE', action = act.CopyMode 'PriorMatch' },
+      { key = 'Escape', mods = 'NONE', action = act.CopyMode 'Close' },
+      { key = 'n', mods = 'CTRL', action = act.CopyMode 'NextMatch' },
+      { key = 'p', mods = 'CTRL', action = act.CopyMode 'PriorMatch' },
+      { key = 'r', mods = 'CTRL', action = act.CopyMode 'CycleMatchType' },
+      { key = 'u', mods = 'CTRL', action = act.CopyMode 'ClearPattern' },
+      { key = 'PageUp', mods = 'NONE', action = act.CopyMode 'PriorMatchPage' },
+      { key = 'PageDown', mods = 'NONE', action = act.CopyMode 'NextMatchPage' },
+      { key = 'UpArrow', mods = 'NONE', action = act.CopyMode 'PriorMatch' },
+      { key = 'DownArrow', mods = 'NONE', action = act.CopyMode 'NextMatch' },
+      { key = 'Enter', mods = 'NONE', action = act.Multiple {
+          { CopyTo = 'PrimarySelection' },
+          { CopyMode = 'Close' },
+          { PasteFrom = 'PrimarySelection' },
+        },
+      },
+    }
+  }
 }

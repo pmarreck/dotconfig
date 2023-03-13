@@ -15,6 +15,7 @@ x-scheme-handler/mailto=Mailspring.desktop
 image/png=gimp.desktop
 image/jpeg=gimp.desktop
 application/pdf=org.gnome.Evince.desktop
+text/csv=code.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -35,3 +36,4 @@ x-scheme-handler/mailto=userapp-Evolution-MRWAW1.desktop;
 image/png=gimp.desktop;
 image/jpeg=gimp.desktop;
 application/pdf=org.gnome.Evince.desktop;
+text/csv=code.desktop;
