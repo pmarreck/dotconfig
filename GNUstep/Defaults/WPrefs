@@ -1,0 +1,31 @@
+{
+  TextureList = ();
+  NoXSetStuff = NO;
+  ColorList = (
+    "#000000",
+    "#292929",
+    "#525252",
+    "#808080",
+    "#a5a5a5",
+    "#cecece",
+    "#f8f8f8",
+    "#cece84",
+    "#ce9d7b",
+    "#84ce84",
+    "#84cec6",
+    "#ce8484",
+    "#8495ce",
+    "#b580ce",
+    "#ce84b5",
+    "#ce4a4a",
+    "#4a5ace",
+    "#4acec6",
+    "#4ace5a",
+    "#c6ce4a",
+    "#ce804a",
+    "#82ce31",
+    "#c629be",
+    "#c62973"
+  );
+  BalloonHelp = YES;
+}

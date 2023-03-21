@@ -1,0 +1,35 @@
+{
+  "firefox-nightly.Firefox-nightly" = {
+    Icon = "firefox-nightly.Firefox-nightly.xpm";
+  };
+  default.default = {
+    Icon = default.default.xpm;
+  };
+  org.gnome.Software.org.gnome.Software = {
+    Icon = org.gnome.Software.org.gnome.Software.xpm;
+  };
+  code.Code = {
+    Icon = code.png;
+  };
+  org.wezfurlong.wezterm.org.wezfurlong.wezterm = {
+    AlwaysUserIcon = No;
+  };
+  vlc.vlc = {
+    Icon = vlc.vlc.xpm;
+  };
+  xterm.XTerm = {
+    Icon = org.wezfurlong.wezterm.png;
+  };
+  nitrogen.Nitrogen = {
+    Icon = nitrogen.Nitrogen.xpm;
+  };
+  org.gnome.Nautilus.org.gnome.Nautilus = {
+    Icon = org.gnome.Nautilus.org.gnome.Nautilus.xpm;
+  };
+  Logo.WMClip = {
+    Icon = linuxterm.tiff;
+  };
+  groupLeader.WPrefs = {
+    Icon = groupLeader.WPrefs.xpm;
+  };
+}

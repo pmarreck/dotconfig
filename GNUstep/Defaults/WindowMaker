@@ -1,0 +1,79 @@
+{
+  FTitleColor = "#fefefe";
+  FrameBorderColor = "#000000";
+  MenuDisabledColor = "#666666";
+  IconTitleBack = "#000010";
+  PixmapPath = (
+    "/home/pmarreck/GNUstep/Library/WindowMaker/Pixmaps",
+    "/home/pmarreck/GNUstep/Library/WindowMaker/Backgrounds",
+    "/home/pmarreck/GNUstep/Library/WindowMaker/CachedPixmaps",
+    "~/pixmaps",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/WindowMaker/Pixmaps",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/WindowMaker/Backgrounds",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/pixmaps"
+  );
+  RaiseDelay = 350;
+  FTitleBack = (dgradient, "rgb:00/00/10", "rgb:20/20/70");
+  ClipTitleFont = "Verdana:bold:pixelsize=10";
+  MiniwindowPreviewBalloons = YES;
+  IconTitleFont = "Arial,sans serif:pixelsize=9";
+  LargeDisplayFont = "Trebuchet MS,sans serif:pixelsize=24";
+  IconificationStyle = flip;
+  IconTitleColor = "#fefefe";
+  MenuTitleColor = "#fefefe";
+  MenuTitleFont = "Trebuchet MS,sans serif:bold:pixelsize=12";
+  MoveTo6to12Head = None;
+  WorkspaceBack = (tpixmap, BlueImage.jpeg, black);
+  SnapEdgeDetect = 5;
+  HighlightTextColor = "#000000";
+  EnforceIconMargin = NO;
+  WindowSnapping = YES;
+  ClipTitleColor = "#000000";
+  MoveTo12to6Head = None;
+  IgnoreFocusClick = YES;
+  FrameFocusedBorderColor = "#000000";
+  WindowTitleFont = "Trebuchet MS,sans serif:bold:pixelsize=12";
+  RunKey = "Mod4+R";
+  ResizebarBack = (solid, "rgb:90/90/90");
+  MiniPreviewSize = 512;
+  KbdModeLock = NO;
+  IgnoreGtkHints = YES;
+  FrameSelectedBorderColor = "#fafafa";
+  ToggleKbdModeKey = None;
+  DragMaximizedWindow = RestoreGeometry;
+  OpaqueResize = YES;
+  MenuTextBack = (hgradient, "rgb:d0/d0/d0", "rgb:80/80/80");
+  RaiseAppIconsWhenBouncing = YES;
+  CycleWorkspaces = YES;
+  OpaqueMoveResizeKeyboard = YES;
+  MenuTextColor = "#000000";
+  SingleClickLaunch = YES;
+  IconBack = (dgradient, "#a3a3b3", "#515561");
+  AntialiasedText = YES;
+  MenuTextFont = "Trebuchet MS,sans serif:pixelsize=12";
+  MenuTitleBack = (dgradient, "rgb:00/00/20", "rgb:20/20/70");
+  MouseWheelAction = SwitchWindows;
+  SnapToTopMaximizesFullscreen = YES;
+  HighlightColor = "#fefefe";
+  FocusMode = sloppy;
+  WrapMenus = YES;
+  CClipTitleColor = "#616161";
+  MenuStyle = singletexture;
+  IconPath = (
+    "/home/pmarreck/GNUstep/Library/Icons",
+    "/home/pmarreck/GNUstep/Library/WindowMaker/Pixmaps",
+    "/home/pmarreck/GNUstep/Library/WindowMaker/CachedPixmaps",
+    "~/pixmaps",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/WindowMaker/Icons",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/WindowMaker/Pixmaps",
+    "/nix/store/g8f7g6r7gx1gvz8fgbz40cfnd7cpfbn5-windowmaker-0.95.9/share/pixmaps",
+    "/home/pmarreck/GNUstep/Library/Icons"
+  );
+  PTitleBack = (dgradient, "rgb:50/50/50", "rgb:80/80/80");
+  SaveSessionOnExit = YES;
+  UTitleColor = "#333333";
+  CirculateRaise = YES;
+  UTitleBack = (dgradient, "rgb:90/90/90", "rgb:d0/d0/d0");
+  PTitleColor = "#fefefe";
+  ResizeDisplay = line;
+}
