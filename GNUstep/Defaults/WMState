@@ -58,13 +58,13 @@
       {
         Forced = No;
         Name = "org\\.gnome\\.Nautilus.org\\.gnome\\.Nautilus";
-        DropCommand = "org.gnome.Nautilus %d";
+        DropCommand = "nautilus %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,5";
         Lock = No;
-        PasteCommand = "org.gnome.Nautilus %s";
-        Command = org.gnome.Nautilus;
+        PasteCommand = "nautilus %s";
+        Command = nautilus;
       },
       {
         Forced = No;
@@ -170,13 +170,13 @@
       {
         Forced = No;
         Name = "org\\.gnome\\.Nautilus.org\\.gnome\\.Nautilus";
-        DropCommand = "org.gnome.Nautilus %d";
+        DropCommand = "nautilus %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,5";
         Lock = No;
-        PasteCommand = "org.gnome.Nautilus %s";
-        Command = org.gnome.Nautilus;
+        PasteCommand = "nautilus %s";
+        Command = nautilus;
       },
       {
         Forced = No;
@@ -240,7 +240,28 @@
       Shaded = No;
       Miniaturized = No;
       Command = "firefox-nightly";
-      Geometry = "1762x1237+397+163";
+      Geometry = "1373x1118+1643+68";
+      Hidden = No;
+      Workspace = peter;
+      ShortcutMask = 0;
+    },
+    {
+      Dock = Dock;
+      Name = "firefox-nightly.Firefox-nightly";
+      Shaded = No;
+      Miniaturized = No;
+      Command = "firefox-nightly";
+      Geometry = "1373x1118+87+23";
+      Hidden = No;
+      Workspace = peter;
+      ShortcutMask = 0;
+    },
+    {
+      Name = code.Code;
+      Shaded = No;
+      Miniaturized = No;
+      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad .\"";
+      Geometry = "1827x1073+1441+227";
       Hidden = No;
       Workspace = peter;
       ShortcutMask = 0;
@@ -250,7 +271,7 @@
       Shaded = No;
       Miniaturized = No;
       Command = "/nix/store/pr4h2gbpfvi5szq8iqnklvj7ksii7ba6-wezterm-20221119-145034-49b9839f/bin/wezterm-gui";
-      Geometry = "2156x1228+50+107";
+      Geometry = "1378x871+1484+38";
       Hidden = No;
       Workspace = peter;
       ShortcutMask = 0;
@@ -259,8 +280,19 @@
       Name = code.Code;
       Shaded = No;
       Miniaturized = No;
-      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad /home/pmarreck/GNUstep/Defaults/WMRootMenu\"";
-      Geometry = "1170x857+225+50";
+      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad .\"";
+      Geometry = "2141x896+313+459";
+      Hidden = No;
+      Workspace = peter;
+      ShortcutMask = 0;
+    },
+    {
+      Dock = Dock;
+      Name = "firefox-nightly.Firefox-nightly";
+      Shaded = No;
+      Miniaturized = No;
+      Command = "firefox-nightly";
+      Geometry = "1373x1118+87+23";
       Hidden = No;
       Workspace = peter;
       ShortcutMask = 0;
@@ -270,7 +302,7 @@
       Shaded = No;
       Miniaturized = No;
       Command = "/nix/store/pr4h2gbpfvi5szq8iqnklvj7ksii7ba6-wezterm-20221119-145034-49b9839f/bin/wezterm-gui";
-      Geometry = "1431x753+418+426";
+      Geometry = "1256x1321+102+57";
       Hidden = No;
       Workspace = peter;
       ShortcutMask = 0;
@@ -279,28 +311,8 @@
       Name = code.Code;
       Shaded = No;
       Miniaturized = No;
-      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad /home/pmarreck/GNUstep/Defaults/WMRootMenu\"";
-      Geometry = "1495x892+1848+502";
-      Hidden = No;
-      Workspace = peter;
-      ShortcutMask = 0;
-    },
-    {
-      Name = code.Code;
-      Shaded = No;
-      Miniaturized = No;
-      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad /home/pmarreck/GNUstep/Defaults/WMRootMenu\"";
-      Geometry = "1139x856+2068+204";
-      Hidden = No;
-      Workspace = peter;
-      ShortcutMask = 0;
-    },
-    {
-      Name = org.wezfurlong.wezterm.org.wezfurlong.wezterm;
-      Shaded = No;
-      Miniaturized = No;
-      Command = "/nix/store/pr4h2gbpfvi5szq8iqnklvj7ksii7ba6-wezterm-20221119-145034-49b9839f/bin/wezterm-gui";
-      Geometry = "825x500+202+138";
+      Command = "\"/nix/store/135ml8i5d3f2pl8ikk9ms781mhdldjyx-vscode-1.76.2/lib/vscode/code --enable-crashpad .\"";
+      Geometry = "1183x869+16+397";
       Hidden = No;
       Workspace = peter;
       ShortcutMask = 0;

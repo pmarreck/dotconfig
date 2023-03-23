@@ -1,9 +1,9 @@
 {
-  "firefox-nightly.Firefox-nightly" = {
-    Icon = "firefox-nightly.Firefox-nightly.xpm";
-  };
   default.default = {
     Icon = default.default.xpm;
+  };
+  "firefox-nightly.Firefox-nightly" = {
+    Icon = "firefox-nightly.Firefox-nightly.xpm";
   };
   org.gnome.Software.org.gnome.Software = {
     Icon = org.gnome.Software.org.gnome.Software.xpm;
@@ -19,6 +19,9 @@
   };
   xterm.XTerm = {
     Icon = org.wezfurlong.wezterm.png;
+  };
+  steam_app_1361210.steam_app_1361210 = {
+    Icon = steam_app_1361210.steam_app_1361210.xpm;
   };
   nitrogen.Nitrogen = {
     Icon = nitrogen.Nitrogen.xpm;
