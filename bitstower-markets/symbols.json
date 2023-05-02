@@ -6,39 +6,39 @@
       "quoteType" : "EQUITY",
       "shortName" : "ThredUp Inc.",
       "exchange" : "NMS",
-      "marketState" : "POSTPOST",
+      "marketState" : "REGULAR",
       "currency" : "USD",
       "priceHint" : 4,
-      "regularMarketTime" : 1671570004,
-      "regularMarketPrice" : 1.5600000000000001,
-      "regularMarketChange" : -0.13000011,
-      "regularMarketChangePercent" : -7.6923139999999997
+      "regularMarketTime" : 1675442540,
+      "regularMarketPrice" : 2.3599999999999999,
+      "regularMarketChange" : 0.069999930000000002,
+      "regularMarketChangePercent" : 3.0567658
     },
     {
       "symbol" : "TSLA",
       "quoteType" : "EQUITY",
       "shortName" : "Tesla, Inc.",
       "exchange" : "NMS",
-      "marketState" : "POSTPOST",
+      "marketState" : "REGULAR",
       "currency" : "USD",
       "priceHint" : 2,
-      "regularMarketTime" : 1671570004,
-      "regularMarketPrice" : 137.80000000000001,
-      "regularMarketChange" : -12.069991999999999,
-      "regularMarketChangePercent" : -8.0536410000000007
+      "regularMarketTime" : 1675442555,
+      "regularMarketPrice" : 197.94,
+      "regularMarketChange" : 9.6699979999999996,
+      "regularMarketChangePercent" : 5.1362395000000003
     },
     {
       "symbol" : "AAPL",
       "quoteType" : "EQUITY",
       "shortName" : "Apple Inc.",
       "exchange" : "NMS",
-      "marketState" : "POSTPOST",
+      "marketState" : "REGULAR",
       "currency" : "USD",
       "priceHint" : 2,
-      "regularMarketTime" : 1671570004,
-      "regularMarketPrice" : 132.30000000000001,
-      "regularMarketChange" : -0.069992065000000006,
-      "regularMarketChangePercent" : -0.052876078
+      "regularMarketTime" : 1675442555,
+      "regularMarketPrice" : 157.0,
+      "regularMarketChange" : 6.1799926999999997,
+      "regularMarketChangePercent" : 4.0975947000000001
     },
     {
       "symbol" : "BTC-USD",
@@ -48,10 +48,10 @@
       "marketState" : "REGULAR",
       "currency" : "USD",
       "priceHint" : 2,
-      "regularMarketTime" : 1671590940,
-      "regularMarketPrice" : 16873.018,
-      "regularMarketChange" : 113.853516,
-      "regularMarketChangePercent" : 0.67935467000000005
+      "regularMarketTime" : 1675442400,
+      "regularMarketPrice" : 23641.866999999998,
+      "regularMarketChange" : -186.10156000000001,
+      "regularMarketChangePercent" : -0.78101980000000004
     },
     {
       "symbol" : "EURUSD=X",
@@ -61,10 +61,10 @@
       "marketState" : "REGULAR",
       "currency" : "USD",
       "priceHint" : 4,
-      "regularMarketTime" : 1671591045,
-      "regularMarketPrice" : 1.0619092999999999,
-      "regularMarketChange" : -0.00067698955999999995,
-      "regularMarketChangePercent" : -0.063712480000000002
+      "regularMarketTime" : 1675442502,
+      "regularMarketPrice" : 1.0835410000000001,
+      "regularMarketChange" : -0.0075664520000000004,
+      "regularMarketChangePercent" : -0.69347155000000005
     }
   ]
 }

@@ -12,11 +12,11 @@ application/x-extension-xht=firefox.desktop
 video/x-matroska=vlc.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
 x-scheme-handler/mailto=Mailspring.desktop
-image/png=gimp.desktop
-image/jpeg=gimp.desktop
 application/pdf=org.gnome.Evince.desktop
 text/csv=code.desktop
 text/markdown=code.desktop
+image/png=org.gnome.Shotwell-Viewer.desktop
+image/jpeg=org.gnome.Shotwell-Viewer.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -34,8 +34,8 @@ video/x-matroska=vlc.desktop;
 video/mpeg=vlc.desktop;
 application/xml=code.desktop;
 x-scheme-handler/mailto=userapp-Evolution-MRWAW1.desktop;
-image/png=gimp.desktop;
-image/jpeg=gimp.desktop;
 application/pdf=org.gnome.Evince.desktop;
 text/csv=code.desktop;
 text/markdown=code.desktop;
+image/png=org.gnome.Shotwell-Viewer.desktop;
+image/jpeg=org.gnome.Shotwell-Viewer.desktop;
