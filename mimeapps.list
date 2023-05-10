@@ -16,6 +16,7 @@ image/png=gimp.desktop
 image/jpeg=gimp.desktop
 application/pdf=org.gnome.Evince.desktop
 text/csv=code.desktop
+text/markdown=code.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -37,3 +38,4 @@ image/png=gimp.desktop;
 image/jpeg=gimp.desktop;
 application/pdf=org.gnome.Evince.desktop;
 text/csv=code.desktop;
+text/markdown=code.desktop;
