@@ -55,8 +55,8 @@ truncation_symbol = "…/"
 [directory.substitutions]
 "Documents" = "🗎 "
 "Downloads" = " "
-"Music" = " "
-"Pictures" = " " # "📷 "
+"Music" = "🎼 "
+"Pictures" = "🖼️ " #" " # "📷 "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
@@ -134,6 +134,11 @@ format = "$output"
 [git_status]
 style = ""
 format = '[$all_status$ahead_behind ]($style)'
+
+[nix_shell]
+format = '[$symbol$state( \($name\))]($style)'
+impure_msg = "impure"
+pure_msg = "pure"
 
 [golang]
 symbol = " "
