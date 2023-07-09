@@ -21,10 +21,12 @@ function scheme_for_appearance(appearance)
   end
 end
 
-return {
+local config = {
   check_for_updates = false,
   font = wezterm.font("Berkeley Mono"),
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
+  initial_rows = 40,
+  initial_cols = 100,
   color_schemes = {
     ["Cobalt Peter"] = cobalt2,
     ["Embark"] = embark,
@@ -60,6 +62,8 @@ return {
   },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_close_confirmation.html
   window_close_confirmation = "NeverPrompt",
+  -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
+  window_decorations = "RESIZE",
   -- https://github.com/wez/wezterm/discussions/2426 plus modifications by me
   keys = {
     {
@@ -74,15 +78,17 @@ return {
         end
       end),
     },
-    { key = 'v', mods = 'CTRL', action = act.Paste },
+    { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
     { key = 'v', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
       window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
     },
     { key = 'V', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
       window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
     },
-    { key = 'c', mods = 'ALT', action = act.Copy },
-    { key = 'v', mods = 'ALT', action = act.Paste },
+    { key = 'c', mods = 'ALT', action = act.CopyTo 'ClipboardAndPrimarySelection' },
+    { key = 'v', mods = 'ALT', action = wezterm.action.PasteFrom 'Clipboard' },
+    -- ctrl-backspace does what ctrl-u does, clears an entire input line
+    { key = 'Backspace', mods = 'CTRL', action = wezterm.action.SendKey{ key='u', mods='CTRL' }},
     -- search for things that look like git hashes
     {
       key = 'h',
@@ -111,3 +117,13 @@ return {
     }
   }
 }
+
+for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
+  if gpu.backend == 'Vulkan' then -- and gpu.device_type == 'Integrated' then
+    config.webgpu_preferred_adapter = gpu
+    config.front_end = 'WebGpu'
+    break
+  end
+end
+
+return config
