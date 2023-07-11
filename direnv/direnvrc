@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 [ -f /run/current-system/sw/share/nix-direnv/direnvrc ] && \
 source /run/current-system/sw/share/nix-direnv/direnvrc
-||||||| parent of bfbb5a2 (Add kitty/ to .gitignore, add direnvrc to direnv directory, and update directory substitutions in starship.toml.)
-=======
-source /Users/pmarreck/.nix-profile/share/nix-direnv/direnvrc
->>>>>>> bfbb5a2 (Add kitty/ to .gitignore, add direnvrc to direnv directory, and update directory substitutions in starship.toml.)
+[ -f $HOME/.nix-profile/share/nix-direnv/direnvrc ] && \
+source $HOME/.nix-profile/share/nix-direnv/direnvrc
