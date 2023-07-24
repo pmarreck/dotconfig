@@ -63,7 +63,7 @@ local config = {
   -- https://wezfurlong.org/wezterm/config/lua/config/window_close_confirmation.html
   window_close_confirmation = "NeverPrompt",
   -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
-  window_decorations = "RESIZE",
+  -- window_decorations = "RESIZE",
   -- https://github.com/wez/wezterm/discussions/2426 plus modifications by me
   keys = {
     {
