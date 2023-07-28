@@ -40,6 +40,17 @@ local config = {
   hide_tab_bar_if_only_one_tab = true,
   enable_scroll_bar = true,
   scrollback_lines = 10000000,
+  window_decorations = "RESIZE",
+  use_resize_increments = true,
+  visual_bell = {
+    fade_in_function = 'EaseIn',
+    fade_in_duration_ms = 150,
+    fade_out_function = 'EaseOut',
+    fade_out_duration_ms = 150,
+  },
+  colors = {
+    visual_bell = '#202020',
+  },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_frame.html
   window_frame = {
     inactive_titlebar_bg = "#353535",
@@ -55,10 +66,10 @@ local config = {
   },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_padding.html
   window_padding = {
-    left = "1cell",
-    right = "1.5cell",
-    top = "0.5cell",
-    bottom = "0.5cell",
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
   },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_close_confirmation.html
   window_close_confirmation = "NeverPrompt",

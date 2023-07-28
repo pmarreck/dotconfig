@@ -17,6 +17,7 @@ text/csv=code.desktop
 text/markdown=code.desktop
 image/png=org.gnome.Shotwell-Viewer.desktop
 image/jpeg=org.gnome.Shotwell-Viewer.desktop
+application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -39,3 +40,4 @@ text/csv=code.desktop;
 text/markdown=code.desktop;
 image/png=org.gnome.Shotwell-Viewer.desktop;
 image/jpeg=org.gnome.Shotwell-Viewer.desktop;
+application/vnd.oasis.opendocument.formula-template=org.gnome.font-viewer.desktop;

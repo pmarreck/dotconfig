@@ -1,0 +1,19 @@
+{
+    "*.md": {
+        "rmtrailingws": false
+    },
+    "colorscheme": "abyss",
+    "divchars": "|―",
+    "divreverse": false,
+    "ftoptions": false,
+    "hlsearch": true,
+    "ignorecase": false,
+    "mkparents": true,
+    "parsecursor": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "saveundo": true,
+    "scrollmargin": 10,
+    "tabmovement": true,
+    "tabsize": 2
+}

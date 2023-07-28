@@ -33,7 +33,8 @@ docker
 browsh
 dconf
 XaoS*
-micro
+micro/backups
+micro/buffers
 nix-data
 dconf/user
 asciinema/
