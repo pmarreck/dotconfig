@@ -6,7 +6,7 @@ local cobalt2 = wezterm.color.get_builtin_schemes()["Cobalt2"];
 local embark, _metadata = wezterm.color.load_scheme(wezterm.config_dir .. "/colors/embark.toml");
 local current_theme = embark;
 -- overrides
-current_theme.scrollbar_thumb = "#aaa";
+current_theme.scrollbar_thumb = "#ccc";
 -- overrode the theme text selection colors because they were not distinct enough:
 current_theme.selection_fg = 'black';
 current_theme.selection_bg = '#fffacd';
@@ -39,8 +39,8 @@ local config = {
   use_fancy_tab_bar = true,
   hide_tab_bar_if_only_one_tab = true,
   enable_scroll_bar = true,
-  scrollback_lines = 10000000,
-  window_decorations = "RESIZE",
+  scrollback_lines = 20000000,
+  -- window_decorations = "RESIZE",
   use_resize_increments = true,
   visual_bell = {
     fade_in_function = 'EaseIn',
@@ -49,7 +49,7 @@ local config = {
     fade_out_duration_ms = 150,
   },
   colors = {
-    visual_bell = '#202020',
+    visual_bell = '#692020',
   },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_frame.html
   window_frame = {
@@ -64,10 +64,14 @@ local config = {
     button_hover_fg = "#ffffff",
     button_hover_bg = "#3b3052",
   },
+  inactive_pane_hsb = {
+    saturation = 0.7,
+    brightness = 0.6,
+  },
   -- https://wezfurlong.org/wezterm/config/lua/config/window_padding.html
   window_padding = {
     left = 0,
-    right = 0,
+    right = '1cell',
     top = 0,
     bottom = 0,
   },
