@@ -30,6 +30,9 @@ right_format = """$all""" # doesn't currently work in bash... maybe soon?
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = '▶▶ '
+
 # set the command timeout to 15 seconds
 command_timeout = 15000
 
@@ -54,7 +57,8 @@ truncation_symbol = "…/"
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 "Documents" = "📄 " # "🗎 "
-"Downloads" = " "
+# "Downloads" = " "
+"Downloads" = "💾 " # "📥 "
 "Music" = "🎼 "
 "Pictures" = "🖼️ " #" " # "📷 "
 # Keep in mind that the order matters. For example:
@@ -198,7 +202,8 @@ unknown_indicator = ''
 
 [status]
 # when = """ [[ "$!" =~ 'test' ]] """
-style = 'blink fg:yellow'
+# style = 'blink fg:yellow'
+style = 'fg:yellow'
 # symbol = '🔴'
 success_symbol = '🟢'
 sigint_symbol = '🛑'
