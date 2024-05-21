@@ -55,3 +55,6 @@ kitty/
 Bitcoin/
 polychromatic/states
 polychromatic/devices
+zed/.tmp*
+zed/embeddings
+github-copilot/
