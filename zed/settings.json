@@ -7,8 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Solarized Dark",
+  "theme": "Cobalt",
   "buffer_font_size": 15,
   // The name of a font to use for rendering text in the editor
-  "buffer_font_family": "Berkeley Mono"
+  "buffer_font_family": "Berkeley Mono",
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 500
+    }
+  },
+  "remove_trailing_whitespace_on_save": true,
+  "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "use_tab_characters": true,
+  "show_copilot_suggestions": true,
+  "show_whitespaces": "selection",
+  "ensure_final_newline_on_save": true,
+  "format_on_save": "on",
+  "alternate_scroll": "on"
 }
