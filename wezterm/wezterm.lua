@@ -13,7 +13,7 @@ current_theme.selection_bg = '#fffacd';
 -- current_theme.selection_bg = '#ff9950';
 
 -- now with darkmode support!
-function scheme_for_appearance(appearance)
+local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'Cobalt Peter'
   else
@@ -34,6 +34,12 @@ local config = {
   },
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   -- color_scheme = "Current", --"Cobalt Peter",
+  animation_fps = 60,
+  default_cursor_style = "BlinkingBlock",
+  cursor_blink_rate = 500,
+  cursor_blink_ease_in = { CubicBezier = { 0.0, 0.0, 1.0, 1.0 } },
+  cursor_blink_ease_out = { CubicBezier = { 0.0, 0.0, 1.0, 1.0 } },
+  -- cursor_blink_ease_out = { CubicBezier = { 1.0, 0.42, 0.0, 0.0 } },
   font_size = 12.0,
   window_background_opacity = 0.85,
   use_fancy_tab_bar = true,
@@ -87,23 +93,31 @@ local config = {
       action = wezterm.action_callback(function(window, pane)
         local sel = window:get_selection_text_for_pane(pane)
         if (not sel or sel == '') then
-          window:perform_action(act.SendKey{ key='c', mods='CTRL' }, pane)
+          window:perform_action(act.SendKey { key = 'c', mods = 'CTRL' }, pane)
         else
-          window:perform_action(act{ CopyTo = 'ClipboardAndPrimarySelection' }, pane)
+          window:perform_action(act { CopyTo = 'ClipboardAndPrimarySelection' }, pane)
         end
       end),
     },
-    { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
-    { key = 'v', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
-      window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
+    { key = 'v',         mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+    {
+      key = 'v',
+      mods = 'SHIFT|CTRL',
+      action = wezterm.action_callback(function(window, pane)
+        window:perform_action(act.SendKey { key = 'v', mods = 'CTRL' }, pane)
+      end),
     },
-    { key = 'V', mods = 'SHIFT|CTRL', action = wezterm.action_callback(function(window, pane)
-      window:perform_action(act.SendKey{ key='v', mods='CTRL' }, pane) end),
+    {
+      key = 'V',
+      mods = 'SHIFT|CTRL',
+      action = wezterm.action_callback(function(window, pane)
+        window:perform_action(act.SendKey { key = 'v', mods = 'CTRL' }, pane)
+      end),
     },
-    { key = 'c', mods = 'ALT', action = act.CopyTo 'ClipboardAndPrimarySelection' },
-    { key = 'v', mods = 'ALT', action = wezterm.action.PasteFrom 'Clipboard' },
+    { key = 'c',         mods = 'ALT',  action = act.CopyTo 'ClipboardAndPrimarySelection' },
+    { key = 'v',         mods = 'ALT',  action = wezterm.action.PasteFrom 'Clipboard' },
     -- ctrl-backspace does what ctrl-u does, clears an entire input line
-    { key = 'Backspace', mods = 'CTRL', action = wezterm.action.SendKey{ key='u', mods='CTRL' }},
+    { key = 'Backspace', mods = 'CTRL', action = wezterm.action.SendKey { key = 'u', mods = 'CTRL' } },
     -- search for things that look like git hashes
     {
       key = 'h',
@@ -114,16 +128,19 @@ local config = {
   key_tables = {
     search_mode = {
       -- { key = 'Enter', mods = 'NONE', action = act.CopyMode 'PriorMatch' },
-      { key = 'Escape', mods = 'NONE', action = act.CopyMode 'Close' },
-      { key = 'n', mods = 'CTRL', action = act.CopyMode 'NextMatch' },
-      { key = 'p', mods = 'CTRL', action = act.CopyMode 'PriorMatch' },
-      { key = 'r', mods = 'CTRL', action = act.CopyMode 'CycleMatchType' },
-      { key = 'u', mods = 'CTRL', action = act.CopyMode 'ClearPattern' },
-      { key = 'PageUp', mods = 'NONE', action = act.CopyMode 'PriorMatchPage' },
-      { key = 'PageDown', mods = 'NONE', action = act.CopyMode 'NextMatchPage' },
-      { key = 'UpArrow', mods = 'NONE', action = act.CopyMode 'PriorMatch' },
+      { key = 'Escape',    mods = 'NONE', action = act.CopyMode 'Close' },
+      { key = 'n',         mods = 'CTRL', action = act.CopyMode 'NextMatch' },
+      { key = 'p',         mods = 'CTRL', action = act.CopyMode 'PriorMatch' },
+      { key = 'r',         mods = 'CTRL', action = act.CopyMode 'CycleMatchType' },
+      { key = 'u',         mods = 'CTRL', action = act.CopyMode 'ClearPattern' },
+      { key = 'PageUp',    mods = 'NONE', action = act.CopyMode 'PriorMatchPage' },
+      { key = 'PageDown',  mods = 'NONE', action = act.CopyMode 'NextMatchPage' },
+      { key = 'UpArrow',   mods = 'NONE', action = act.CopyMode 'PriorMatch' },
       { key = 'DownArrow', mods = 'NONE', action = act.CopyMode 'NextMatch' },
-      { key = 'Enter', mods = 'NONE', action = act.Multiple {
+      {
+        key = 'Enter',
+        mods = 'NONE',
+        action = act.Multiple {
           { CopyTo = 'PrimarySelection' },
           { CopyMode = 'Close' },
           { PasteFrom = 'PrimarySelection' },
