@@ -12,6 +12,18 @@ current_theme.selection_fg = 'black';
 current_theme.selection_bg = '#fffacd';
 -- current_theme.selection_bg = '#ff9950';
 
+-- Function to check if a string contains a substring
+local function string_contains(str, substr)
+  return string.find(str, substr, 1, true) ~= nil
+end
+
+local function idempotent_add_path(current_path, new_path)
+  if string_contains(current_path, new_path) then
+    return current_path
+  end
+  return new_path .. ":" .. current_path
+end
+
 -- now with darkmode support!
 local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
@@ -22,6 +34,9 @@ local function scheme_for_appearance(appearance)
 end
 
 local config = {
+  set_environment_variables = {
+    PATH = idempotent_add_path(os.getenv('PATH'), '/usr/local/bin') -- to pick up zed
+  },
   check_for_updates = false,
   font = wezterm.font("Berkeley Mono"),
   harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
@@ -123,6 +138,14 @@ local config = {
       key = 'h',
       mods = 'SHIFT|CTRL',
       action = act.Search { Regex = '[a-fA-F0-9]{6,}' },
+    },
+    {
+      key = ',',
+      mods = 'SUPER',
+      action = wezterm.action.SpawnCommandInNewTab {
+        cwd = wezterm.home_dir,
+        args = { 'zed', wezterm.config_file },
+      },
     },
   },
   key_tables = {
