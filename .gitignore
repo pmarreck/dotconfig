@@ -58,3 +58,4 @@ polychromatic/devices
 zed/.tmp*
 zed/embeddings
 github-copilot/
+refract/
