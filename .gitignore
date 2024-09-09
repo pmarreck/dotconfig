@@ -59,3 +59,6 @@ zed/.tmp*
 zed/embeddings
 github-copilot/
 refract/
+zed/conversations
+zed/prompts
+gpt4all.io

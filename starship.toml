@@ -21,11 +21,13 @@ $time\
 $directory\
 $sudo\
 $shell\
-[> ](fg:#FFAC1C)\
+${custom.character}\
 """
 
 right_format = """$all""" # doesn't currently work in bash... maybe soon?
 # see: https://starship.rs/advanced-config/#enable-right-prompt
+# addendum: requires blesh (ble.sh), and that does hugely extensive things to my prompt but also errors,
+# so I'm passing on it for now
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
@@ -35,6 +37,13 @@ continuation_prompt = '▶▶ '
 
 # set the command timeout to 15 seconds
 command_timeout = 15000
+
+# custom character to show shell level as an increasing number of ">"'s
+[custom.character]
+command = "_SHLVL=$(printf '>%.0s' $(seq 1 $SHLVL)); echo -n $_SHLVL"
+when = "true"
+format = "[$output]($style) "
+style = "fg:#FFAC1C"
 
 # You can also replace your username with a neat symbol like  to save some space
 [username]
