@@ -1,0 +1,43 @@
+{
+    "workbench.colorTheme": "Cobalt",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontFamily": "'Berkeley Mono', 'Anonymice Powerline', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "editor.inlineSuggest.enabled": true,
+    "elixirLS.fetchDeps": false,
+    "files.associations": {
+        "*.es": "shellscript"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[elixir]": {
+        "editor.formatOnType": true,
+        "editor.tabSize": 2
+    },
+    "window.commandCenter": false,
+    "editor.tabSize": 2,
+    "editor.indentSize": "tabSize",
+    "explorer.confirmDelete": false,
+    "pieces.setCopilotLocation": true,
+    "editor.accessibilitySupport": "off",
+    "editor.hover.enabled": false,
+    "accessibility.signals.lineHasError": {
+        "sound": "off"
+    },
+    "haskell.manageHLS": "PATH",
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "github.copilot.preferredAccount": "pmarreck",
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ]
+}
